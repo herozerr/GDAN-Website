@@ -29,10 +29,13 @@ body {
     width : 100%;
 }
 .wrapper-banner {
-    height : 80vh;
+    width : 100%;
+    height : 60vh;
 }
 .homepage-banner {
     user-select: none;
+    width : 80%;
+    height: 60vh;
 }
 
 .wrapper-main-content {
