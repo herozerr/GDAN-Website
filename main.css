@@ -69,7 +69,7 @@ body {
     align-items: center;
     justify-content: center;
     cursor : pointer;
-    border-radius : 2vh;
+    border-radius : 1.5vh;
     text-shadow: 0px 0px 0.2vh #000000;
     user-select: none;
     transition : 
@@ -80,10 +80,20 @@ body {
     box-shadow 0.3s ease-in-out;
 }
 .homepage-navbar-item:hover {
-    background : rgba(35,35,55,0.8);
+    background: rgba(35,35,55,0.8);
     transform : translateY(0.1vh);
     scale : 110%;
     box-shadow: 0px 0px 30px 35px rgba(10,10,20,0.05);
+}
+#navbar-submit-button:hover {
+    background : linear-gradient(0deg,rgba(37, 99, 235, 0.55) 0%, rgba(37, 99, 235, 0.6) 100%);
+}
+#navbar-donate-button:hover {
+    background : linear-gradient(0deg,rgba(74, 222, 128, 0.55) 0%, rgba(74, 222, 128, 0.6) 100%);
+}
+#navbar-discord-button:hover {
+    background : rgba(114,137,218, 0.6);
+    background : linear-gradient(0deg,rgba(114,137,218, 0.55) 0%, rgba(114,137,218, 0.6) 100%);
 }
 .container-main-content {
     margin : 0;
