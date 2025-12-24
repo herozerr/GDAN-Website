@@ -81,6 +81,7 @@ body {
     transform 0.2s ease-in-out,
     scale 0.3s ease-in-out,
     box-shadow 0.3s ease-in-out;
+    text-decoration: none;
 }
 .homepage-navbar-item:hover {
     background: rgba(35,35,55,0.8);
@@ -309,6 +310,17 @@ body {
 .user-socials:hover {
     filter : brightness(60%);
 }
+
+
+.results-video {
+    margin : auto;
+    margin-bottom : 2vh;
+    width : 560px;
+    height : 315px;
+    border : 0.4vh solid white;
+    border-radius : 0.2vw;
+}
+
 
 #timer {
     height: 100vh;
