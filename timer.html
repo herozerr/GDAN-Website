@@ -1,0 +1,54 @@
+<head>
+    <link rel="stylesheet" href="./main.css">
+    <script>
+        let time = '';
+        let startTime = '1766579880000';
+        let endTime = '1766579880000';
+        let interval = null;
+        function init() {
+            updateTimer();
+        }
+        function hasEnded() {
+            return endTime - Date.now() <= 0;
+        }
+        function hasStarted() {
+            return startTime - Date.now() <= 0;
+        }
+        function updateTimer() {
+            console.log('started:' + hasStarted());
+            console.log('ended:' + hasEnded());
+            if (hasEnded()) {
+                time = 'Event is over!';
+                clearInterval(interval);
+                document.getElementById('timer').innerHTML = time;
+                return;
+            }
+            let timestamp, prefix = '';
+            if (!hasStarted() && !hasEnded()) {
+                timestamp = startTime;
+                console.log('starting');
+                prefix = 'Starting in';
+            } else if (hasStarted()) {
+                console.log('started');
+                timestamp = endTime;
+            }
+
+            const diffMs = timestamp - Date.now();
+
+            const totalSeconds = Math.floor(diffMs / 1000);
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            time = prefix + (prefix.length > 0 ? '<br />' : '') + [hours, minutes, seconds].map((t)=>`${t}`.length < 2 ? '0' + t : t).join('\:');
+            console.log(time);
+            document.getElementById('timer').innerHTML = time;
+            setTimeout(updateTimer, 1000);
+        }
+    </script>
+</head>
+<body onload="init();" style="background : transparent;">
+    <div>
+        <p id="timer"></p>
+    </div>
+</body>

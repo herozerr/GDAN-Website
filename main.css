@@ -309,3 +309,31 @@ body {
 .user-socials:hover {
     filter : brightness(60%);
 }
+
+#timer {
+    height: 100vh;
+    display : grid;
+    align-content: center;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    margin: auto;
+    font-family : 'pusab';
+    color : white;
+    font-size : 60px;
+    -webkit-text-stroke : 2px black;
+}
+
+#raised {
+    height: 100vh;
+    display : grid;
+    align-content: center;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    margin: auto;
+    font-family : 'pusab';
+    color : white;
+    font-size : 101px;
+    -webkit-text-stroke : 3px black;
+}

@@ -1,0 +1,29 @@
+<head>
+    <link rel="stylesheet" href="./main.css">
+    <script>
+        async function updateRaised() {
+
+            let raised = 0;
+            let r = await fetch('https://streamlabscharity.com/api/v1/users/campaigns/herozer/geometry-dash-all-nighter-vol-2', {
+                'headers' : {
+                    'accept' : 'application/json, text/plain, */*' ,
+                },
+                'body' : null,
+                'method' : 'GET',
+            });
+            if (!r.ok) {
+                console.log("Failed.");
+                throw new Error(`Response status: ${response.status}`);
+            }
+            r = await r.json();
+            amount = r.amount_raised_usd
+            amount /= 100;
+            let text = "$" + amount;
+            document.getElementById('raised').innerHTML = text;
+            setTimeout(updateRaised, 90000);
+            }
+    </script>
+    <body onload="updateRaised();" style="background : transparent;">
+        <p id="raised"></p>
+    </body>
+</head>
