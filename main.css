@@ -327,6 +327,7 @@ body {
     height : auto;
     min-height : 60vh;
     width : 60vw;
+    user-select: none;
 }
 .assets-grid-row {
     display : flex;
