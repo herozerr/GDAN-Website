@@ -10,6 +10,10 @@ body {
 ::-webkit-scrollbar {
     display : none;
 }
+
+* {
+    scroll-behavior: smooth;
+}
 .bg {
     user-select : none;
     width : 100vw;
@@ -334,7 +338,7 @@ body {
     padding : 0;
     height : 11vh;
     width : 60vw;
-    overflow : hidden;
+    overflow : show;
 }
 .assets-grid-col1 {
     display : inline-flex;
@@ -381,6 +385,11 @@ body {
     margin : auto;
 }
 #timer-preview {
+    width : 95%;
+    height : 95%;
+    border : none;
+}
+#donated-preview {
     width : 95%;
     height : 95%;
     border : none;

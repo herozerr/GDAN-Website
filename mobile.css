@@ -1,10 +1,10 @@
-@media (max-width : 600px) {
+@media (max-width : 760px) {
 
 .homepage-navbar-item {
     height: 6vh;
     margin: auto;
     display: flex;
-    font-size: 3vh;
+    font-size: 2.5vh;
     font-family: 'pusab';
     color: white;
     align-items: center;
@@ -31,7 +31,7 @@
     height: 6vh;
     margin: auto;
     display: flex;
-    font-size: 3vh;
+    font-size: 4.5vw;
     font-family: 'pusab';
     color: white;
     align-items: center;
@@ -83,15 +83,7 @@
 }
 
 .carousel-wrapper {
-    width: 80vw;
-    height: auto;
     padding-top: 50vh;
-    padding-bottom: 10vh;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    margin: auto;
-    display: flex;
-    overflow: hidden;
 }
 
 .user-container {
@@ -119,10 +111,36 @@
     width: 100%;
     display: inline-flex;
     height: 14vh;
-    font-size: 6vh;
+    font-size: 7vw;
     text-align: center;
     justify-content: center;
     align-items: center;
     padding-top: 2vh;
     padding-bottom: 0.5vh;
+}
+.results-video {
+    width : calc(560px/2.5);
+    height : calc(315px / 2.5);
+}
+#timer-preview {
+    width : inherit;
+    height : inherit;
+    transform-origin : 0 0;
+    transform : scale(.50);
+}
+#donated-preview {
+    transform-origin : 0 0;
+    transform : scale(50%);
+}
+.assets-grid-col1 {
+    width : 70%;
+}
+.assets-grid-col2 {
+    width : 0;
+    display : none;
+}
+.assets-grid-col3 {
+    width : 30%;
+}
+
 }
