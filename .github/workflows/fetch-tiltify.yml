@@ -16,6 +16,7 @@ jobs:
           CLIENT_ID: ${{ secrets.TILTIFY_CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.TILTIFY_CLIENT_SECRET }}
           CAMPAIGN_UUID: ${{ secrets.TILTIFY_CAMPAIGN_UUID }}
+          CAMPAIGN_SLUG: ${{ secrets.CAMPAIGN_SLUG }}
         run: |
           TOKEN=$(curl -s -X POST https://v5api.tiltify.com/oauth/token \
           -H "Content-Type: application/x-www-form-urlencoded" \
