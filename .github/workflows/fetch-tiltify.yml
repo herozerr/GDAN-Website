@@ -41,7 +41,7 @@ jobs:
           curl -i https://v5api.tiltify.com/api/public/campaigns \
           -H "Authorization: Bearer $TOKEN"
 
-          curl -s https://v5api.tiltify.com/api/public/campaigns/$CAMPAIGN_UUID \
+          curl -s https://v5api.tiltify.com/api/public/campaigns/$CAMPAIGN_SLUG \
             -H "Authorization: Bearer $TOKEN" \
             | jq . \
             > data.json
