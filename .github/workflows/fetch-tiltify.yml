@@ -34,7 +34,12 @@ jobs:
             --data-urlencode "grant_type=client_credentials" \
             --data-urlencode "scope=public"
 
-            echo "TOKEN LENGTH: ${#TOKEN}"
+
+          curl -i https://v5api.tiltify.com/api/public/current-user \
+          -H "Authorization: Bearer $TOKEN"
+
+          curl -i https://v5api.tiltify.com/api/public/campaigns \
+          -H "Authorization: Bearer $TOKEN"
 
           curl -s https://v5api.tiltify.com/api/public/campaigns/$CAMPAIGN_UUID \
             -H "Authorization: Bearer $TOKEN" \
