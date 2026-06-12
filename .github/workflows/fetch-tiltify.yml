@@ -24,7 +24,7 @@ jobs:
 
           curl -s https://v5api.tiltify.com/api/public/campaigns/$CAMPAIGN_UUID \
             -H "Authorization: Bearer $TOKEN" \
-            | jq '{total_amount_raised: data}' \
+            | jq '{total_amount_raised: .data}' \
             > data.json
 
       - name: Commit and push
