@@ -1,0 +1,36 @@
+name: Fetch Tiltify Data
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # runs every 5 minutes
+  workflow_dispatch:  # allows manual trigger
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Fetch Tiltify donation total
+        env:
+          CLIENT_ID: ${{ secrets.TILTIFY_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.TILTIFY_CLIENT_SECRET }}
+          CAMPAIGN_UUID: ${{ secrets.TILTIFY_CAMPAIGN_UUID }}
+        run: |
+          TOKEN=$(curl -s -X POST https://v5api.tiltify.com/oauth/token \
+            -H 'Content-Type: application/json' \
+            -d "{\"client_id\":\"$CLIENT_ID\",\"client_secret\":\"$CLIENT_SECRET\",\"grant_type\":\"client_credentials\",\"scope\":\"public\"}" \
+            | jq -r '.access_token')
+
+          curl -s https://v5api.tiltify.com/api/public/campaigns/$CAMPAIGN_UUID \
+            -H "Authorization: Bearer $TOKEN" \
+            | jq '{total_amount_raised: .data.total_amount_raised, amount_raised: .data.amount_raised}' \
+            > data.json
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add data.json
+          git diff --staged --quiet || git commit -m "Update Tiltify data"
+          git push
