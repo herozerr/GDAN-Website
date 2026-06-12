@@ -22,6 +22,8 @@ jobs:
           -d "client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&grant_type=client_credentials&scope=public" \
           | jq -r '.access_token')
 
+          echo "TOKEN=$TOKEN"
+
           curl -s https://v5api.tiltify.com/api/public/campaigns/$CAMPAIGN_UUID \
             -H "Authorization: Bearer $TOKEN" \
             | jq . \
