@@ -392,7 +392,15 @@ body {
 #donated-preview {
     width : 95%;
     height : 95%;
+    left : 50%;
     border : none;
+    overflow : hidden;
+    left : 90%;
+    top : 30%;
+}
+#donated-preview::-webkit-scrollbar {
+    width : 0;
+    height : 0;
 }
 
 #timer {
