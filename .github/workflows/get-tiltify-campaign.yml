@@ -18,7 +18,8 @@ jobs:
             https://v5api.tiltify.com/oauth/token \
             -H "Content-Type: application/x-www-form-urlencoded" \
             -u "${TILTIFY_CLIENT_ID}:${TILTIFY_CLIENT_SECRET}" \
-            -d "grant_type=client_credentials")
+            -d "grant_type=client_credentials") \
+            -d "scope=public"
 
           echo "$TOKEN_RESPONSE"
 
