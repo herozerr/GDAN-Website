@@ -1,0 +1,39 @@
+name: Get Tiltify Campaign
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fetch-campaign:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get OAuth access token
+        id: auth
+        env:
+          TILTIFY_CLIENT_ID: ${{ secrets.TILTIFY_CLIENT_ID }}
+          TILTIFY_CLIENT_SECRET: ${{ secrets.TILTIFY_CLIENT_SECRET }}
+        run: |
+          TOKEN_RESPONSE=$(curl -s -X POST \
+            https://v5api.tiltify.com/oauth/token \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -u "${TILTIFY_CLIENT_ID}:${TILTIFY_CLIENT_SECRET}" \
+            -d "grant_type=client_credentials")
+
+          echo "$TOKEN_RESPONSE"
+
+          ACCESS_TOKEN=$(echo "$TOKEN_RESPONSE" | jq -r '.access_token')
+
+          echo "access_token=$ACCESS_TOKEN" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch campaign
+        env:
+          TILTIFY_CLIENT_ID: ${{ secrets.TILTIFY_CLIENT_ID }}
+          TILTIFY_CAMPAIGN_ID: ${{ secrets.TILTIFY_CAMPAIGN_ID }}
+          ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
+        run: |
+          curl -s \
+            "https://v5api.tiltify.com/api/public/campaigns/${TILTIFY_CAMPAIGN_ID}" \
+            -H "Client-ID: ${TILTIFY_CLIENT_ID}" \
+            -H "Authorization: Bearer ${ACCESS_TOKEN}" \
+            -H "Accept: application/json" | jq
