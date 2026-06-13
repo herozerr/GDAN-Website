@@ -1,43 +1,13 @@
-name: Fetch Tiltify Campaign
+- name: Get Tiltify Access Token
+  run: |
+    BASIC_AUTH=$(printf "%s:%s" "$TILTIFY_CLIENT_ID" "$TILTIFY_CLIENT_SECRET" | base64)
 
-on:
-  workflow_dispatch:
+    HTTP_CODE=$(curl -s -o response.json -w "%{http_code}" \
+      -X POST \
+      https://v5api.tiltify.com/oauth/token \
+      -H "Authorization: Basic $BASIC_AUTH" \
+      -H "Content-Type: application/x-www-form-urlencoded" \
+      -d "grant_type=client_credentials")
 
-jobs:
-  get-campaign:
-    runs-on: ubuntu-latest
-
-    env:
-      TILTIFY_CLIENT_ID: ${{ secrets.TILTIFY_CLIENT_ID }}
-      TILTIFY_CLIENT_SECRET: ${{ secrets.TILTIFY_CLIENT_SECRET }}
-      CAMPAIGN_ID: "e6739304-4767-4fcc-9308-107c411bbb55"
-
-    steps:
-      - name: Get Tiltify Access Token
-        id: auth
-        run: |
-          BASIC_AUTH=$(printf "%s:%s" "$TILTIFY_CLIENT_ID" "$TILTIFY_CLIENT_SECRET" | base64)
-
-          RESPONSE=$(curl -s -X POST \
-            https://v5api.tiltify.com/oauth/token \
-            -H "Authorization: Basic $BASIC_AUTH" \
-            -H "Content-Type: application/x-www-form-urlencoded" \
-            -d "grant_type=client_credentials")
-
-          ACCESS_TOKEN=$(echo "$RESPONSE" | jq -r '.access_token')
-
-          if [ -z "$ACCESS_TOKEN" ] || [ "$ACCESS_TOKEN" = "null" ]; then
-            echo "Failed to obtain access token"
-            echo "$RESPONSE"
-            exit 1
-          fi
-
-          echo "access_token=$ACCESS_TOKEN" >> "$GITHUB_OUTPUT"
-
-      - name: Get Campaign Data
-        run: |
-          curl -s \
-            -H "Authorization: Bearer ${{ steps.auth.outputs.access_token }}" \
-            -H "Accept: application/json" \
-            "https://v5api.tiltify.com/api/public/campaigns/$CAMPAIGN_ID" \
-            | jq .
+    echo "HTTP Status: $HTTP_CODE"
+    cat response.json
