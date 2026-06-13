@@ -10,7 +10,7 @@ jobs:
     env:
       TILTIFY_CLIENT_ID: ${{ secrets.TILTIFY_CLIENT_ID }}
       TILTIFY_CLIENT_SECRET: ${{ secrets.TILTIFY_CLIENT_SECRET }}
-      CAMPAIGN_ID: "123456"
+      CAMPAIGN_ID: "e6739304-4767-4fcc-9308-107c411bbb55"
 
     steps:
       - name: Get Tiltify Access Token
