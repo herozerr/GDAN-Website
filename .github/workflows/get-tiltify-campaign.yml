@@ -1,40 +1,43 @@
-name: Get Tiltify Campaign
+name: Fetch Tiltify Campaign
 
 on:
   workflow_dispatch:
 
 jobs:
-  fetch-campaign:
+  get-campaign:
     runs-on: ubuntu-latest
 
+    env:
+      TILTIFY_CLIENT_ID: ${{ secrets.TILTIFY_CLIENT_ID }}
+      TILTIFY_CLIENT_SECRET: ${{ secrets.TILTIFY_CLIENT_SECRET }}
+      CAMPAIGN_ID: "123456"
+
     steps:
-      - name: Get OAuth access token
+      - name: Get Tiltify Access Token
         id: auth
-        env:
-          TILTIFY_CLIENT_ID: ${{ secrets.TILTIFY_CLIENT_ID }}
-          TILTIFY_CLIENT_SECRET: ${{ secrets.TILTIFY_CLIENT_SECRET }}
         run: |
-          TOKEN_RESPONSE=$(curl -s -X POST \
+          BASIC_AUTH=$(printf "%s:%s" "$TILTIFY_CLIENT_ID" "$TILTIFY_CLIENT_SECRET" | base64)
+
+          RESPONSE=$(curl -s -X POST \
             https://v5api.tiltify.com/oauth/token \
+            -H "Authorization: Basic $BASIC_AUTH" \
             -H "Content-Type: application/x-www-form-urlencoded" \
-            -u "${TILTIFY_CLIENT_ID}:${TILTIFY_CLIENT_SECRET}" \
-            -d "grant_type=client_credentials" \
-            -d "scope=public")
+            -d "grant_type=client_credentials")
 
-          echo "$TOKEN_RESPONSE"
+          ACCESS_TOKEN=$(echo "$RESPONSE" | jq -r '.access_token')
 
-          ACCESS_TOKEN=$(echo "$TOKEN_RESPONSE" | jq -r '.access_token')
+          if [ -z "$ACCESS_TOKEN" ] || [ "$ACCESS_TOKEN" = "null" ]; then
+            echo "Failed to obtain access token"
+            echo "$RESPONSE"
+            exit 1
+          fi
 
           echo "access_token=$ACCESS_TOKEN" >> "$GITHUB_OUTPUT"
 
-      - name: Fetch campaign
-        env:
-          TILTIFY_CLIENT_ID: ${{ secrets.TILTIFY_CLIENT_ID }}
-          TILTIFY_CAMPAIGN_ID: ${{ secrets.TILTIFY_CAMPAIGN_ID }}
-          ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
+      - name: Get Campaign Data
         run: |
           curl -s \
-            "https://v5api.tiltify.com/api/public/campaigns/${TILTIFY_CAMPAIGN_ID}" \
-            -H "Client-ID: ${TILTIFY_CLIENT_ID}" \
-            -H "Authorization: Bearer ${ACCESS_TOKEN}" \
-            -H "Accept: application/json" | jq
+            -H "Authorization: Bearer ${{ steps.auth.outputs.access_token }}" \
+            -H "Accept: application/json" \
+            "https://v5api.tiltify.com/api/public/campaigns/$CAMPAIGN_ID" \
+            | jq .
