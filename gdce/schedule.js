@@ -137,7 +137,7 @@ if (event.getLocationURL() != null) {
     event1 = new Event(
         "Build Jam", // event name
         "Herozer", // host name
-        [1784271600000, 1784962800000], // start&endtime
+        [1784358000000, 1784962800000], // start&endtime
         "Enjoy building for a week as everyone streams and donates!", // description string
         "Geometry Dash", // location string
         null // location URL
