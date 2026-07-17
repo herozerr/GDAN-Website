@@ -111,7 +111,7 @@ body {
 }
 .schedule-host {
     width : calc(100%-2rem);
-    height : 1rem;
+    height : auto;
     margin : 0;
     padding : 0rem;
     padding-left : 0.5rem;
