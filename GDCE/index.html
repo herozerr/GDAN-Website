@@ -1,0 +1,192 @@
+<html lang="en">
+    <head>
+        <!--      Developed by    -->
+        <!--       Whippie37      -->
+        <script src="./main.js"></script>
+        <link rel="stylesheet" href="./main.css">
+        <link rel="stylesheet" href="./mobile.css">
+        <link rel="icon" href="./Assets/icon.ico">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Zen+Dots&display=swap" rel="stylesheet">
+        <title>GDCE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        <meta property="og:title" content="GD All Nighter">
+        <meta property="og:url" content="charity.gd/" />
+        <meta property="og:image" content="./Assets/logo.png">
+        <meta property="og:description" content="">
+        <meta name="theme-color" content="#FFFFFF">
+
+        <script>
+            async function updateRaised() {
+
+            let raised = 0;
+            let r = await fetch('https://streamlabscharity.com/api/v1/teams/@gd-charity-event-2026/geometry-dash-charity-event-2026', {
+                'headers' : {
+                    'accept' : 'application/json, text/plain, */*' ,
+                },
+                'body' : null,
+                'method' : 'GET',
+            });
+            if (!r.ok) {
+                console.log("Failed.");
+                throw new Error(`Response status: ${response.status}`);
+            }
+            r = await r.json();
+            console.log(r);
+            amount = r.amount_raised
+            amount /= 100;
+            let percentage = amount / 10000;
+            console.log(percentage);
+            let text = amount;
+            if (amount < 999.99) {
+                text = parseFloat(amount).toFixed(2);
+            }
+            text = String(text).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            text = '$' + text;
+            console.log(text);
+            percentage = Math.round(percentage*100);
+            document.getElementById('donation-amount').innerHTML = text + " / $10,000";
+            if (amount >= 10000) {
+                percentage = 100;
+                console.log('Goal Reached!');
+                document.getElementById('donation-bar').style.background = "linear-gradient(90deg, rgb(var(--color-secondary-alt)) 0%, rgb(var(--color-secondary)) 100%)";
+                document.getElementById('donation-bar-outline').style.border = '0.1vw solid rgb(var(--color-secondary))';
+                document.getElementById('donation-percentage').style.color = "rgb(40,45,50)";
+            }
+            if (percentage > 0.25) {
+                document.getElementById('donation-bar').style.width = `${percentage}%`;
+            }
+            else {
+                document.getElementById('donation-bar').style.width = `0.25%`
+            }
+            document.getElementById('donation-percentage').innerHTML = percentage + "%";
+
+
+            setTimeout(updateRaised, 90000);
+            }
+        </script>
+
+
+    </head>
+    <body onload="init(); updateRaised();">
+        <div class="bg-container">
+            <div id= "bg-img" class="bg-img"></div>
+        </div>
+
+        <div id="main-page-wrapper" class="wrapper">
+                <img src="./Assets/banner.png" id="banner">
+                <p id="donation-amount">$0.00 / $10,000</p>
+                <div id="donation-bar-wrapper" class="wrapper">
+                    <div id="donation-bar-outline">
+                        <div id ="donation-bar"></div>
+                    </div>
+                    <p id="donation-percentage">0%</p>
+                </div>
+
+        
+                <div id="page-navigation" class="wrapper">
+                    <div class="homepage-button" onclick="document.getElementById('quicknav').scrollIntoView();">Info</div>
+                    <div class="homepage-button" onclick="window.open('https:/\/discord.gg/8MQHdEk6mP', '_blank')">Discord</div>
+                    <div class="homepage-button" onclick="window.open('https:/\/streamlabscharity.com/teams/@gd-charity-event-2026/geometry-dash-charity-event-2026', '_blank')">Donate</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper wrapper-main-content">
+            <div class="container-main-content">
+                <div class="quicknav-container">
+                    <h1 id="quicknav">Jump to a Section</h1>
+                    <span class="wrapper">
+                        <div class="quicknav-button">Event</div>
+                        <div class="quicknav-button">Charity</div>
+                        <div class="quicknav-button">Build Jam</div>
+                        <div class="quicknav-button">Schedule</div>
+                    </span>
+                </div>
+
+
+                <div class="section-container" id="about">
+                    <img class="section-coverimage" src="./Assets/gdce_logo.png"></img>
+                    <span class="section-text">
+                        <h1 id="placeholder">ABOUT GDCE 2026</h1>
+                        <p>
+                            This will be a multi-streamer event lasting 10 days, from Friday, July 17th to Sunday, July 26th, in which we will be raising money for the Autoimmune Association!<br>
+                            <br>
+                            Over the last 2 years, we have been working hard to bring the entire Geometry Dash community together for a cause; and this year is no different. We have gathered a talented list of creators, all with their own plans and content ideas, to bring the greatest content possible to the table to both raise money for a great cause and have fun while doing so.<br>
+                            <br>
+                            We have raised money for The Trevor Project, raising over $8,000; and City of Hope, raising an absolutely crazy $16,102. Not only that, but last year, we absolutely annihilated our goal of $3,000 five times over. This year, we're going big or going home - which means this year's goal is $10,000, the biggest initial goal we've had ever.
+                        </p>
+                    </span>
+                </div>
+
+
+                <div class="section-container" id="about">
+                    <span class="section-text">
+                        <h1>ABOUT THE AUTOIMMUNE ASSOCIATION</h1>
+                        <p>
+                            The Autoimmune Association is a leading nonprofit dedicated to fighting against autoimmune diseases. By collaborating with researchers, supporting patients, and legislative advocacy, the AA is dedicated to improving the quality of life of those in the autoimmune community.<br>
+                            <br>
+                            As a quick overview, their four areas of focus are:<br>
+                            </p>
+                            <p class="list-item">
+                                Public Awareness: AA helps the public understand the prevalence of autoimmune disease worldwide, the different conditions within its umbrella, and what it means to live with one or more of these conditions.<br>
+                                (<a href="https://autoimmune.org/about-us/" target="_blank">https://autoimmune.org/about-us/</a>)
+                                <br>
+                            </p>
+                            <br>
+                            <p class="list-item">
+                                Research: The AA helps bringing together scientists to exchange research, funding studies on diagnosis, preventative tools, and therapies. One of their notable contributions is ARNet, a patient registry that connects individuals to research studies and clinical trials, accelerating progress in treatment, early detection, and symptom management.<br>
+                                (<a href="https:/\/autoimmune.org/research/" target="_blank">https://autoimmune.org/research/</a>)
+                                <br>
+                            </p>
+                            <br>
+                            <p class="list-item">
+                                Services & Education: AA empowers and educates patients through accessible resources on getting a diagnosis, finding treatment options, accessing care, managing comorbidities, and improving quality of life.<br>
+                                (<a href="https://autoimmune.org/resource-center/" target="_blank">https://autoimmune.org/resource-center/</a>)
+                                <br>
+                            </p>
+                            <br>
+                            <p class="list-item">
+                                Advocacy: AA leads initiatives to protect key policies at the US federal and state levels that help improve the lives of those with autoimmune disease. With NIH funding being slashed under the current administration, it is critical to protect federal funding, which has previously advances research in CAR T-cell therapy, precision immunology, and novel diagnostics.<br>
+                                (<a href="https://autoimmune.org/advocacy" target="_blank">https://autoimmune.org/advocacy/</a>)
+                                <br>
+                            </p>
+                        </p>
+                    </span>
+                    <img class="section-coverimage" src="./Assets/autoimmune_logo.png"></img>
+                </div>
+
+                <div class="section-container" id="about">
+                    <span class="section-text">
+                        <h1>Build Jam</h1>
+                        <h4>Alongside the GDCE 2026, we're also hosting a Build Jam during the event!</h4>
+                        <p>
+                            Creators are challenged to make levels during a week period, starting on July 18th and going until the 25th. At the end, we're going to compile all completed levels and throw them into lists, just like with Geometry Dash All Nighter!<br>
+                            <br>
+                            If you're familiar with the rules of GD All Nighter, majority of the same rules apply! Here they are if you want to have them for future reference anyways.<br>
+                            </p>
+                            <list>
+
+                                <li>Collabs are allowed, no limits to them at all!</li>
+                                <li>Levels should be created within the 7-day period from start to finish.</li>
+                                <li>Levels should be over 45 seconds long.</li>
+                                <li>All completed levels will be thrown into a list(s) at the end.</li>
+                                <li>Levels can use any song on Newgrounds or in the Music Library! Have fun, no limits!</li>
+                            </list>
+                            <br>
+                            <p>
+
+                                To submit your level, we will have a link on the website to a Google Form that will open a day after the Jam begins. Link: (not open yet)<br>
+                                If you have any further questions, hit my DMs and ask away! Have fun and happy building!<br>
+                            </p>
+                        </p>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+
+        
+    </body>
+</html>

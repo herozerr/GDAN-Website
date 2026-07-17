@@ -1,0 +1,290 @@
+@font-face {
+    font-family: 'Pusab';
+    src: url('./Assets/PUSAB___.otf');
+}
+:root {
+    --color-main: 35, 93, 112;
+    --color-secondary: 248,244,156;
+    --color-secondary-alt: 208,204,116;
+    --color-secondary-alt2: 178,174,86;
+    --color-main-alt: 87, 217, 214;
+    --font-primary: 'consolas';
+    --color-link: 72, 165, 163;
+}
+a {
+    color : rgb(var(--color-link));
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    filter : brightness(110%);
+}
+body {
+    margin : 0;
+    padding : 0;
+    overflow-x : hidden;
+    background-color: rgb(32,86,104);
+    font-family: var(--font-primary);
+}
+::-webkit-scrollbar {
+    display : none;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+.bg-container {
+    width : 100vw;
+    height : 100vh;
+    top : 0;
+    position : fixed;
+    overflow: hidden;
+}
+.bg-img {
+    transform : scale(1.1);
+    user-select : none;
+    width : 105vw;
+    height : 105vh;
+    min-width : 100%;
+    min-height: 100%;
+    height : auto;
+    position : fixed;
+    left : -2vw;
+    top : -2vh;
+    z-index : -3;
+    -o-object-fit: cover;
+    object-fit: cover;
+    background: url('./Assets/background.png');
+    animation: loopBackground 120s linear infinite;
+    border : 0;
+    filter : brightness(0.3) blur(8px);
+    overflow : hidden;
+}
+@keyframes loopBackground {
+    0% {
+        background-position : 0 0;
+    }
+    100% {
+        background-position : -10000px 5000px;
+    }
+}
+#main-page-wrapper {
+    height : 100vh;
+    width : 100vw;
+    position : absolute;
+    display : flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    display : flex;
+    align-content : center;
+    justify-content: center;
+    width : 100%;
+}
+#banner {
+    width : 60vw;
+    height : 20vw;
+    margin-left : auto;
+    margin-right: auto;
+    margin-top : 0vh;
+    margin-bottom : 0vh;
+    filter: drop-shadow(0 0 5vw rgba(0,0,0,0.6));
+}
+#page-navigation {
+    height : 6vh;
+    width : 70vw;
+    padding-left : 15vw;
+    padding-right : 15vw;
+    margin-top : 3vh;
+    margin-bottom: 10vh;
+}
+.homepage-button {
+    width : 14vw;
+    height : 6vh;
+    border : 1px solid rgb(var(--color-secondary));
+    font-size : 3vh;
+    font-family : 'Consolas';
+    margin : auto;
+    text-align: center;
+    align-content: center;
+    color : rgb(var(--color-secondary));
+    border-radius : 0.2vw;
+    filter : drop-shadow(0 0 1vw rgba(var(--color-secondary), 0.1));
+    cursor : pointer;
+    background : rgba(var(--color-main), 0.6);
+    transition : all 0.5s;
+}
+.homepage-button:hover {
+    background: rgba(var(--color-main), 0.9);
+    transform : translateY(0.5vh);
+    filter : brightness(1.5) drop-shadow(0 0 2vw rgba(var(--color-secondary), 0.3));
+}
+
+
+.wrapper-main-content {
+    height : auto;
+    position : absolute;
+    top : 110vh;
+    margin : 0;
+}
+
+
+.container-main-content {
+    margin : 0;
+    height : auto;
+    width : 100%;
+    background : rgba(10,10,20,0.3);
+    backdrop-filter : blur(9px);
+}
+
+.quicknav-container {
+    width : 50vw;
+    margin : auto;
+    margin-top : 5vh;
+    margin-bottom : 5vh;
+    height : 18vh;
+}
+.quicknav-container > h1 {
+    margin : auto;
+    color : rgb(var(--color-main-alt));
+    text-align: center;
+    margin-top : 1vh;
+    margin-bottom : 2vh;
+}
+.quicknav-button {
+    width : 10vw;
+    height : 4vh;
+    color : rgb(var(--color-secondary));
+    margin: auto;
+    text-align: center;
+    font-size : 2.5vh;
+    align-content: center;
+    cursor : pointer;
+    transition : filter 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+.quicknav-button:hover {
+    filter : brightness(150%);
+    transform : translateY(0.2rem);
+}
+
+
+.section-container {
+    width : 90vw;
+    height : auto;
+    padding-top : 5vh;
+    padding-bottom : 5vh;
+    border-radius: 0.5vh;
+    background : rgba(10, 13, 18, 0.6);
+    margin : auto;
+    display : flex;
+    margin-bottom : 22vh;
+    backdrop-filter : blur(20px);
+    box-shadow: 0px 0px 25px 15px rgba(10, 13, 18, 0.25);
+}
+.section-coverimage {
+    width : 25vh;
+    height : 25vh;
+    margin : auto;
+    margin-top: 1vh;
+    padding : 3vw;
+}
+.section-text {
+    width : calc(80vw - 16vh);
+}
+.section-text > h1 {
+    --font-size : 3.8rem;
+    color : rgb(var(--color-main-alt));
+    height : auto;
+    text-align: left;
+    margin : 3rem;
+    margin-bottom : 3rem;
+    width : auto;
+    font-size : var(--font-size);
+    text-decoration: underline;
+    font-family: 'Consolas';
+    user-select: none;
+}
+.section-text > p {
+    color : rgb(var(--color-secondary-alt));
+    text-align: left;
+    height : auto;
+    margin-top : 2vh;
+    margin-left: 3vw;
+    margin-right : 3vw;
+    width : calc(100% - 6vw);
+    font-size : 1.2rem;
+    line-height: 2.1rem;
+    padding-left : 2vw;
+}
+.section-text > .list-item {
+    font-size : 1rem;
+    padding-left : 1vw;
+    line-height : 1.2rem;
+    width : inherit;
+    color : rgb(var(--color-secondary-alt2));
+    border-left : 0.2vw solid rgb(var(--color-secondary));
+    margin-left : 7vw;
+}
+.section-text > h4 {
+    color : rgb(var(--color-secondary-alt));
+    text-align: left;
+    height : auto;
+    margin-left: 3vw;
+    margin-right : 3vw;
+    width : calc(100% - 6vw);
+    font-size : 1.6rem;
+    line-height: 1.6rem;
+    padding-left : 2vw;
+}
+
+li {
+    color : rgb(var(--color-secondary-alt2));
+    text-align: left;
+    height : auto;
+    margin-left: 3vw;
+    margin-right : 3vw;
+    width : calc(100% - 6vw);
+    font-size : 1.1rem;
+    line-height: 1.4rem;
+}
+
+#donation-bar-wrapper {
+    width : 90vw;
+    margin : auto;
+    height : 10vh;
+    margin-top : 0vh;
+    margin-bottom : 6vh;
+    align-items: center;
+    justify-content: center;
+}
+#donation-bar-outline {
+    width : 60vw;
+    height : 5vh;
+    border : 0.1vw solid rgb(var(--color-main));
+    border-radius : 0.3vw;
+    margin : auto;
+    position: absolute;
+    padding : 0.3vw;
+}
+#donation-bar {
+    width : 55%;
+    border-radius: 0.2vw;
+    height : 100%;
+    background : linear-gradient(90deg, rgb(var(--color-main)) 0%, rgb(var(--color-main-alt)) 100%);
+}
+#donation-amount {
+    color : rgb(var(--color-secondary));
+    margin: auto;
+    width : 100%;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 3vh;
+    font-size : 1.2rem;
+}
+#donation-percentage {
+    font-size : 1.2rem;
+    position : absolute;
+    margin: auto;
+    color : rgb(180, 253, 255);
+}
