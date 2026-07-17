@@ -65,7 +65,7 @@ body {
 }
 .schedule-name {
     width : calc(100%-2rem);
-    height : 2rem;
+    height : auto;
     margin : 0;
     padding : 1rem;
     padding-left : 0;
@@ -89,7 +89,7 @@ body {
     overflow-y : scroll;
     margin : 0;
     padding : 1rem;
-    font-size : 3vh;
+    font-size : 1rem;
     color : rgb(var(--color-secondary-alt));
 }
 .schedule-location {
