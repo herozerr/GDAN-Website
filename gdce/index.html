@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Zen+Dots&display=swap" rel="stylesheet">
         <title>GDCE</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-        <meta property="og:title" content="GD CE">
+        <meta property="og:title" content="GDCE">
         <meta property="og:url" content="charity.gd/gdce" />
         <meta property="og:image" content="./Assets/logo.png">
         <meta property="og:description" content="">
@@ -97,15 +97,15 @@
                 <div class="quicknav-container">
                     <h1 id="quicknav">Jump to a Section</h1>
                     <span class="wrapper">
-                        <div class="quicknav-button">Event</div>
-                        <div class="quicknav-button">Charity</div>
-                        <div class="quicknav-button">Build Jam</div>
-                        <div class="quicknav-button">Schedule</div>
+                        <div class="quicknav-button" onclick="document.getElementById('event-info').scrollIntoView();">Event</div>
+                        <div class="quicknav-button" onclick="document.getElementById('charity-info').scrollIntoView();">Charity</div>
+                        <div class="quicknav-button" onclick="document.getElementById('jam-info').scrollIntoView();">Build Jam</div>
+                        <div class="quicknav-button" onclick="document.getElementById('schedule').scrollIntoView();">Schedule</div>
                     </span>
                 </div>
 
 
-                <div class="section-container" id="about">
+                <div class="section-container" id="event-info">
                     <img class="section-coverimage" src="./Assets/gdce_logo.png"></img>
                     <span class="section-text">
                         <h1 id="placeholder">ABOUT GDCE 2026</h1>
@@ -120,7 +120,7 @@
                 </div>
 
 
-                <div class="section-container" id="about">
+                <div class="section-container" id="charity-info">
                     <span class="section-text">
                         <h1>ABOUT THE AUTOIMMUNE ASSOCIATION</h1>
                         <p>
@@ -156,7 +156,7 @@
                     <img class="section-coverimage" src="./Assets/autoimmune_logo.png"></img>
                 </div>
 
-                <div class="section-container" id="about">
+                <div class="section-container" id="jam-info">
                     <span class="section-text">
                         <h1>Build Jam</h1>
                         <h4>Alongside the GDCE 2026, we're also hosting a Build Jam during the event!</h4>
