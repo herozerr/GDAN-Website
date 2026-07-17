@@ -218,7 +218,7 @@ body {
     margin-top : 2vh;
     margin-left: 3vw;
     margin-right : 3vw;
-    width : calc(100%);
+    width : calc(100% - 10rem);
     font-size : 1.2rem;
     line-height: 2.1rem;
     padding-left : 2vw;
