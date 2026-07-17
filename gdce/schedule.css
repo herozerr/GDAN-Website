@@ -55,7 +55,7 @@ body {
     margin-left : 3rem;
     margin-right : 3rem;
     border-radius: 100%;
-    border : 1px solid white;
+    border : 2px solid rgb(var(--color-main-alt));
 }
 .schedule-info-wrapper {
     width : calc(100vw - 12rem);
