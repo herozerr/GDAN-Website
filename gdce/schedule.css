@@ -119,3 +119,31 @@ body {
     font-size : 1rem;
     color : rgb(var(--color-main));
 }
+
+@media (max-width : 760px) {
+    .schedule-icon {
+        width : 16vw;
+        height : 16vw;
+        min-height: 16vw;
+    min-width: 16vw;
+    }
+    .schedule-name {
+        font-size : 6vw;
+        padding-bottom : 2vw;
+    }
+    .schedule-host {
+        font-size : 3.5vw;
+        padding-bottom : 2vw;
+    }
+    .schedule-time {
+        font-size : 4vw;
+        padding-bottom : 2vw;
+    }
+    .schedule-description {
+        font-size : 3vw;
+        padding-bottom : 2vw;
+    }
+    .schedule-location {
+        font-size : 3vw;
+    }
+}
