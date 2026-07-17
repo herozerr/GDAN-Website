@@ -97,9 +97,11 @@ body {
 }
 .homepage-button {
     width : 10rem;
+    max-width : 16vw;
     height : 3rem;
+    max-height : 6vh;
     border : 1px solid rgb(var(--color-secondary));
-    font-size : 1.5rem;
+    font-size : 1.2rem;
     font-family : 'Consolas';
     margin : auto;
     text-align: center;
@@ -300,5 +302,5 @@ li {
     height : 60vh;
 }
 .schedule-embed::-webkit-scrollbar {
-    display : none;
+    background-color: transparent;
 }

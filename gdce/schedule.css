@@ -15,7 +15,13 @@ body {
     background-color: transparent;
     font-family: var(--font-primary);
 }
-::-webkit-scrollbar {display: none;}
+::-webkit-scrollbar { background-color: transparent; width : 0.5vw; padding-right : 1vw;}
+::-webkit-scrollbar-thumb {
+    background-color : rgb(var(--color-main));
+    border-radius : 0.4vw;
+    transform : translateX(-5vw);
+    
+}
 #schedule-wrapper {
     width : 90vw;
     height : 90rem;
@@ -79,6 +85,8 @@ body {
 .schedule-description {
     width : calc(100%-2rem);
     height : auto;
+    max-height : 6rem;
+    overflow-y : hidden;
     margin : 0;
     padding : 1rem;
     font-size : 1rem;

@@ -1,12 +1,11 @@
 class Event {
-constructor(name, host, times, description, location, locationURL, iconPath) {
+constructor(name, host, times, description, location, locationURL) {
 this.name = name;
 this.host = host;
 this.times = times;
 this.description = description;
 this.location = location;
 this.locationURL = locationURL;
-this.iconPath = iconPath;
 }
 
 getName() {
@@ -26,9 +25,6 @@ return this.location;
 }
 getLocationURL() {
 return this.locationURL;
-}
-getIcon() {
-return this.iconPath;
 }
 
 }
@@ -78,7 +74,7 @@ let container = document.createElement('div');
 container.className = "schedule-item";
 let icon = document.createElement('img');
 icon.className = "schedule-icon";
-icon.src = event.getIcon();
+icon.src = `./Assets/EventHosts/${event.getHost()}.png`;
 container.appendChild(icon);
 
 let infoWrapper = document.createElement("div");
@@ -144,8 +140,7 @@ if (event.getLocationURL() != null) {
         [1784271600000, 1784962800000], // start&endtime
         "Enjoy building for a week as everyone streams and donates!", // description string
         "Geometry Dash", // location string
-        null, // location URL
-        null // iconPath
+        null // location URL
     )
 
     event2 = new Event(
@@ -154,7 +149,6 @@ if (event.getLocationURL() != null) {
         [1784397600000, 1784408400000],
         "Up to 15 Geometry Dash YouTubers / Streamers will be going against each other in Meccha chameleon",
         "Meccha Chameleon",
-        null,
         null
     )
 
@@ -164,18 +158,16 @@ if (event.getLocationURL() != null) {
         [1784746800000, 1784764800000],
         "Hello everyone! As part of the 2026 GD Charity Event, I am hosting a GeoGuessr tournament with many of your favorite Geometry Dash YouTubers!<br>Which Geometry Dash YouTuber will reign victorious and be crowned the \"Champion of the Dashlands\"? Tune in to find out...",
         "youtube.com/@mathgeniusgd",
-        "https:/\/youtube.com/@mathgeniusgd",
-        null
+        "https:/\/youtube.com/@mathgeniusgd"
     )
 
     event4 = new Event(
         "Dashers take on Splatoon 3 Tournament",
-        "Lunaaa",
+        "lunaaakh",
         [1784764800000, 1784778300000],
         "For at minimum 2 hours, myself, AlePlayz, Sonicstep and symspace will be participating in a Splatoon Tournament as a full GD community-based team! It will be joyful and whimsical, AND for every individual game we win, i will be giving 5$ to the charity.<br>I will be streaming it on my twitch, so I hope you can come support our goofy shenanigans! :lunaaaSilly:",
         "https://www.twitch.tv/lunaaakh",
-        "https:/\/www.twitch.tv/lunaaakh",
-        null
+        "https:/\/www.twitch.tv/lunaaakh"
     )
     
     Events = [
