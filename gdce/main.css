@@ -189,9 +189,9 @@ body {
     width : 10rem;
     height : 10rem;
     margin : auto;
-    margin-top: 1vh;
-    padding-top : 3vw;
-    padding-bottom : 3vw;
+    margin-top: 1rem;
+    padding-top : 3rem;
+    padding-bottom : 3rem;
     padding-right : 0;
     padding-left : 0;
 }
