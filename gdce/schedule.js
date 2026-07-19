@@ -35,7 +35,6 @@ let Events = [];
 
 function convertUnixToDate(time) {
 let date = new Date(time);
-console.log('day: ' + date.getDay());
 let day = '';
 switch (date.getDay()) {
     case 0:
@@ -93,7 +92,6 @@ infoWrapper.appendChild(host);
 let time = document.createElement("p");
 time.className = "schedule-time";
 let timeList = event.getTimes();
-console.log(timeList);
 let timeStart = convertUnixToDate(timeList[0]);
 let timeEnd = convertUnixToDate(timeList[1]);
 time.innerHTML = timeStart + " - " + timeEnd;
@@ -121,61 +119,61 @@ if (event.getLocationURL() != null) {
     }
     
     function loadEvents() {
-        console.log('loading events...');
-        console.log(Events);
-        console.log(Events.length);
         const schedule = document.getElementById('schedule-wrapper');
         for (let i = 0; i < Events.length; i++) {
             let event = createEventItem(Events[i]);
-            console.log(event);
-            
             schedule.appendChild(event);
         }
     }
     
-    
-    event1 = new Event(
-        "Build Jam", // event name
-        "Herozer", // host name
-        [1784358000000, 1784962800000], // start&endtime
-        "Enjoy building for a week as everyone streams and donates!", // description string
-        "Geometry Dash", // location string
-        null // location URL
-    )
-
-    event2 = new Event(
-        "Meccha Chameleon X Geometry Dash",
-        "risp",
-        [1784397600000, 1784408400000],
-        "Up to 15 Geometry Dash YouTubers / Streamers will be going against each other in Meccha chameleon",
-        "Meccha Chameleon",
-        null
-    )
-
-    event3 = new Event(
-        "GeoGuessr x Geometry Dash YouTuber Tournament",
-        "MathGenius",
-        [1784746800000, 1784764800000],
-        "Hello everyone! As part of the 2026 GD Charity Event, I am hosting a GeoGuessr tournament with many of your favorite Geometry Dash YouTubers!<br>Which Geometry Dash YouTuber will reign victorious and be crowned the \"Champion of the Dashlands\"? Tune in to find out...",
-        "youtube.com/@mathgeniusgd",
-        "https:/\/youtube.com/@mathgeniusgd"
-    )
-
-    event4 = new Event(
-        "Dashers take on Splatoon 3 Tournament",
-        "lunaaakh",
-        [1784764800000, 1784778300000],
-        "For at minimum 2 hours, myself, AlePlayz, Sonicstep and symspace will be participating in a Splatoon Tournament as a full GD community-based team! It will be joyful and whimsical, AND for every individual game we win, i will be giving 5$ to the charity.<br>I will be streaming it on my twitch, so I hope you can come support our goofy shenanigans! :lunaaaSilly:",
-        "https://www.twitch.tv/lunaaakh",
-        "https:/\/www.twitch.tv/lunaaakh"
-    )
-    
     Events = [
-        event1,
-        event2,
-        event3,
-        event4
+
+        new Event(
+            "Build Jam", // event name
+            "Herozer", // host name
+            [1784358000000, 1784962800000], // start&endtime
+            "Enjoy building for a week as everyone streams and donates!", // description string
+            "Geometry Dash", // location string
+            null // location URL
+        ),
+        
+        new Event(
+            "GD Shark Tank",
+            "Sacredier",
+            [1784581200000, 1784588400],
+            "",
+            "shark tank place",
+            null
+        ),
+
+        new Event(
+            "TERRIBLE LEVEL TOURNAMENT",
+            "Medaides",
+            [1784656800000, 1784667600000],
+            "Our contestants will get 30-45 minutes to build the worst, funniest, most terrible level they can. Every round there will be judges ranking the levels on a scale of 1-100, with 100 being the funniest, most terrible level, and 1 being the most normal one.",
+            "https://www.youtube.com/@Medaides",
+            "https://www.youtube.com/@Medaides"
+        ),
+        
+        new Event(
+            "GeoGuessr x Geometry Dash YouTuber Tournament",
+            "MathGenius",
+            [1784746800000, 1784764800000],
+            "Hello everyone! As part of the 2026 GD Charity Event, I am hosting a GeoGuessr tournament with many of your favorite Geometry Dash YouTubers!<br>Which Geometry Dash YouTuber will reign victorious and be crowned the \"Champion of the Dashlands\"? Tune in to find out...",
+            "youtube.com/@mathgeniusgd",
+            "https:/\/youtube.com/@mathgeniusgd"
+        ),
+        
+        new Event(
+            "Dashers take on Splatoon 3 Tournament",
+            "lunaaakh",
+            [1784764800000, 1784778300000],
+            "For at minimum 2 hours, myself, AlePlayz, Sonicstep and symspace will be participating in a Splatoon Tournament as a full GD community-based team! It will be joyful and whimsical, AND for every individual game we win, i will be giving 5$ to the charity.<br>I will be streaming it on my twitch, so I hope you can come support our goofy shenanigans! :lunaaaSilly:",
+            "https://www.twitch.tv/lunaaakh",
+            "https:/\/www.twitch.tv/lunaaakh"
+        )
     ];
+
     
     
     loadEvents();

@@ -34,7 +34,6 @@
                 throw new Error(`Response status: ${response.status}`);
             }
             r = await r.json();
-            console.log(r);
             amount = r.amount_raised
             amount /= 100;
             let percentage = amount / 10000;
@@ -186,7 +185,7 @@
                 </div>
 
 
-                <div class="section-container">
+                <div class="section-container" id="schedule">
                     <span class="section-text">
 
                         <h1>Schedule</h1>
