@@ -138,6 +138,15 @@ if (event.getLocationURL() != null) {
         ),
         
         new Event(
+            "STOP ME from BEATING BLOODBATH (Globed Event)",
+            "Androxma",
+            [1784493000000, 1784503800000],
+            "STOP ME FROM BEATING BLOODBATH BY ANY MEANS NECESSARY! No clip on top of me to distract me, speed hack to go flying by me, create player stacks to obscure gameplay, ANYTHING GOES!<br><br>Every donation to the the GD Charity Event 2026 ($1 or more) will also trigger a wheel spin which will activate community power ups such as Player opacity 100%, Death effects on, Hide my player, and more!",
+            "https://www.youtube.com/live/59DiKUeNAQ0",
+            "https://www.youtube.com/live/59DiKUeNAQ0"
+        ),
+
+        new Event(
             "GD Shark Tank",
             "Sacredier",
             [1784581200000, 1784588400],
