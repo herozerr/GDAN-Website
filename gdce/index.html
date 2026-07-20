@@ -21,6 +21,7 @@
         <script>
             async function updateRaised() {
 
+            let goal = 15000;
             let raised = 0;
             let r = await fetch('https://streamlabscharity.com/api/v1/teams/@gd-charity-event-2026/geometry-dash-charity-event-2026', {
                 'headers' : {
@@ -36,7 +37,7 @@
             r = await r.json();
             amount = r.amount_raised
             amount /= 100;
-            let percentage = amount / 10000;
+            let percentage = amount / goal;
             console.log(percentage);
             let text = amount;
             if (amount < 999.99) {
@@ -46,8 +47,8 @@
             text = '$' + text;
             console.log(text);
             percentage = Math.round(percentage*100);
-            document.getElementById('donation-amount').innerHTML = text + " / $10,000";
-            if (amount >= 10000) {
+            document.getElementById('donation-amount').innerHTML = text + " / $15,000";
+            if (amount >= goal) {
                 percentage = 100;
                 console.log('Goal Reached!');
                 document.getElementById('donation-bar').style.background = "linear-gradient(90deg, rgb(var(--color-secondary-alt)) 0%, rgb(var(--color-secondary)) 100%)";
@@ -76,7 +77,7 @@
 
         <div id="main-page-wrapper" class="wrapper">
                 <img src="./Assets/banner.png" id="banner">
-                <p id="donation-amount">$0.00 / $10,000</p>
+                <p id="donation-amount">$0.00 / $15,000</p>
                 <div id="donation-bar-wrapper" class="wrapper">
                     <div id="donation-bar-outline">
                         <div id ="donation-bar"></div>
