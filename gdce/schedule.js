@@ -138,12 +138,21 @@ if (event.getLocationURL() != null) {
         ),
         
         new Event(
-            "STOP ME from BEATING BLOODBATH (Globed Event)",
-            "Androxma",
-            [1784493000000, 1784503800000],
-            "STOP ME FROM BEATING BLOODBATH BY ANY MEANS NECESSARY! No clip on top of me to distract me, speed hack to go flying by me, create player stacks to obscure gameplay, ANYTHING GOES!<br><br>Every donation to the the GD Charity Event 2026 ($1 or more) will also trigger a wheel spin which will activate community power ups such as Player opacity 100%, Death effects on, Hide my player, and more!",
-            "https://www.youtube.com/live/59DiKUeNAQ0",
-            "https://www.youtube.com/live/59DiKUeNAQ0"
+            "$1 = 1% Slower Speed",
+            "Ender",
+            [1784552400000, 1784577600000],
+            "Every $1 donated, I will turn down my speed by 1%. How long will this take? (Will include a Globed room)",
+            "https://www.youtube.com/watch?v=8BDeL7YMBC0",
+            "https://www.youtube.com/watch?v=8BDeL7YMBC0"
+        ),
+
+        new Event(
+            "Geometry Podcast with AeonAir!",
+            "LolsShow",
+            [1784570400000, 1784577600000],
+            "",
+            "https://www.youtube.com/@LolsShow",
+            "https://www.youtube.com/@LolsShow"
         ),
 
         new Event(
