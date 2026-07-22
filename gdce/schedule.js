@@ -138,39 +138,12 @@ if (event.getLocationURL() != null) {
         ),
         
         new Event(
-            "$1 = 1% Slower Speed",
+            "Challenge Triathlon Finale",
             "Ender",
-            [1784552400000, 1784577600000],
-            "Every $1 donated, I will turn down my speed by 1%. How long will this take? (Will include a Globed room)",
-            "https://www.youtube.com/watch?v=8BDeL7YMBC0",
-            "https://www.youtube.com/watch?v=8BDeL7YMBC0"
-        ),
-
-        new Event(
-            "Geometry Podcast with AeonAir!",
-            "LolsShow",
-            [1784570400000, 1784577600000],
-            "",
-            "https://www.youtube.com/@LolsShow",
-            "https://www.youtube.com/@LolsShow"
-        ),
-
-        new Event(
-            "GD Shark Tank",
-            "Sacredier",
-            [1784581200000, 1784588400],
-            "",
-            "shark tank place",
-            null
-        ),
-
-        new Event(
-            "TERRIBLE LEVEL TOURNAMENT",
-            "Medaides",
-            [1784656800000, 1784667600000],
-            "Our contestants will get 30-45 minutes to build the worst, funniest, most terrible level they can. Every round there will be judges ranking the levels on a scale of 1-100, with 100 being the funniest, most terrible level, and 1 being the most normal one.",
-            "https://www.youtube.com/@Medaides",
-            "https://www.youtube.com/@Medaides"
+            [1784725200000, 1784743200000],
+            "Finale of my challenge series for the Geometry Dash Charity Event!",
+            "https://youtu.be/qALnv4ZF-XU",
+            "https://youtu.be/qALnv4ZF-XU"
         ),
         
         new Event(
