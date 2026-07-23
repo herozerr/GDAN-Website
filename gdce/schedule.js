@@ -138,30 +138,12 @@ if (event.getLocationURL() != null) {
         ),
         
         new Event(
-            "Challenge Triathlon Finale",
-            "Ender",
-            [1784725200000, 1784743200000],
-            "Finale of my challenge series for the Geometry Dash Charity Event!",
-            "https://youtu.be/qALnv4ZF-XU",
-            "https://youtu.be/qALnv4ZF-XU"
-        ),
-        
-        new Event(
-            "GeoGuessr x Geometry Dash YouTuber Tournament",
-            "MathGenius",
-            [1784746800000, 1784764800000],
-            "Hello everyone! As part of the 2026 GD Charity Event, I am hosting a GeoGuessr tournament with many of your favorite Geometry Dash YouTubers!<br>Which Geometry Dash YouTuber will reign victorious and be crowned the \"Champion of the Dashlands\"? Tune in to find out...",
-            "youtube.com/@mathgeniusgd",
-            "https:/\/youtube.com/@mathgeniusgd"
-        ),
-        
-        new Event(
-            "Dashers take on Splatoon 3 Tournament",
-            "lunaaakh",
-            [1784764800000, 1784778300000],
-            "For at minimum 2 hours, myself, AlePlayz, Sonicstep and symspace will be participating in a Splatoon Tournament as a full GD community-based team! It will be joyful and whimsical, AND for every individual game we win, i will be giving 5$ to the charity.<br>I will be streaming it on my twitch, so I hope you can come support our goofy shenanigans! :lunaaaSilly:",
-            "https://www.twitch.tv/lunaaakh",
-            "https:/\/www.twitch.tv/lunaaakh"
+            "Meccha Chameleon w/ GD Youtubers Pt.2",
+            "risp",
+            [1784844000000, 1784851200000],
+            "Meccha Chameleon with a few more new faces than the last time",
+            "https://www.youtube.com/@RispGD",
+            "https://www.youtube.com/@RispGD"
         )
     ];
 
