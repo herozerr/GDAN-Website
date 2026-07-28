@@ -128,23 +128,7 @@ if (event.getLocationURL() != null) {
     
     Events = [
 
-        new Event(
-            "Build Jam", // event name
-            "Herozer", // host name
-            [1784358000000, 1784962800000], // start&endtime
-            "Enjoy building for a week as everyone streams and donates!", // description string
-            "Geometry Dash", // location string
-            null // location URL
-        ),
         
-        new Event(
-            "Meccha Chameleon w/ GD Youtubers Pt.2",
-            "risp",
-            [1784844000000, 1784851200000],
-            "Meccha Chameleon with a few more new faces than the last time",
-            "https://www.youtube.com/@RispGD",
-            "https://www.youtube.com/@RispGD"
-        )
     ];
 
     
