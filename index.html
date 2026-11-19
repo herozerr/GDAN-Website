@@ -1,1 +1,306 @@
-Temporarily Under Construction.
+<html lang="en">
+    <head>
+        <!--      Developed by    -->
+        <!--       Whippie37      -->
+        <script src="./main.js"></script>
+        <link rel="stylesheet" href="./main.css">
+        <link rel="stylesheet" href="./mobile.css">
+        <link rel="icon" href="./Assets/icon.ico">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+        <title>GD All Nighter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        <meta property="og:title" content="GD All Nighter">
+        <meta property="og:url" content="https://gdallnighter.com/" />
+        <meta property="og:image" content="https://gdallnighter.com/Assets/logo.png">
+        <meta property="og:description" content="A 24-hour Geometry Dash building challenge for charity! Next edition is on June 13th. ">
+        <meta name="theme-color" content="#FFFFFF">
+
+        
+    </head>
+    <body onload="init()">
+        <video id ="bg" class="bg" loop autoplay muted src="./Assets/Downloadable/Lunar Visual Loop 3k.mp4"></video>
+
+        <div class="wrapper wrapper-banner">
+            <img id="homepage-banner" class="homepage-banner" src="Assets/banner.png">
+        </div>
+        <div id="homepage-navbar" class="homepage-navbar">
+            <img src="./Assets/logo.png" class="navbar-logo" id="navbar-logo">
+            <a href="https:/\/forms.gle/cARYzmQCvqDBrGkS7" target="_blank" class="homepage-navbar-item" id="navbar-submit-button">Submit</a>
+            <a href = "https://tiltify.com/@herozer/gdan-vol3" target="_blank" class="homepage-navbar-item" id="navbar-donate-button">Donate</a>
+            <a href = "https://discord.gg/mUTpD5hsWH" target="_blank" class="homepage-navbar-item" id="navbar-discord-button">Discord</a>
+        </div>
+
+        <div class="wrapper wrapper-main-content">
+            <div class="container-main-content">
+                <div class="wrapper wrapper-carousel-buttons">
+                    <div class="carousel-button" onclick="goToSection(0);">Rules</div>
+                    <div class="carousel-button" onclick="goToSection(1)">FAQ</div>
+                    <div class="carousel-button" onclick="goToSection(2)">Staff</div>
+                    <div class="carousel-button" onclick="goToSection(3)">Assets</div>
+                    <div class="carousel-button" onclick="goToSection(4)">Previous Results</div>
+                </div>
+
+                <div class="carousel-wrapper" >
+                    <div class="carousel-container" id="info-section">
+
+                        <div class="carousel-item" id="carousel-item-1">
+                            <div class="carousel-header">Rules</div>
+                            <div class="carousel-content">
+                                - Levels must be fully created in the 24-hour period. No starting or uploading before the time begins! In the case of collabs, you may have necessary song triggers and part dividers, and that is it.<br><br>
+                                - Levels should be over 45 seconds long.<br><br>
+                                - Levels are recommended to be decorated to make it into the final lists, but judging is also based on how levels represent the event. For example, if there was a crazy layout made in the 24 hours, that could definitely make it in!<br><br>
+                                - Levels that do not make it into the main list(s), except in extreme circumstances, will be added to the side list(s).<br><br>
+                                - Collabs are welcome, with no limits as to the amount of people involved!<br><br>
+                                - Levels can use any song on Newgrounds or in the Music Library. NONGs are allowed, but will not be eligible for the main list.<br><br>
+                                - Levels must include the GD All Nighter logo in the endscreen. You can find it by going to the ID 128551914. The logo should be easy to spot, wherever it is placed.<br><br>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-header">FAQ</div>
+                            <div class="content-subheader">Can I host collabs/be a part of them?</div>
+                            <div class="carousel-content">Absolutely! You can participate in as many as you like with no limitations!</div>
+                            <div class="content-subheader">Can I invite anyone I want?</div>
+                            <div class="carousel-content">Please do! The more, the merrier!</div>
+                            <div class="content-subheader">Can I start with a layout?</div>
+                            <div class="carousel-content">No, the entire level must be made within the 24 hours, including the layout.</div>
+                            <div class="content-subheader">Can I use a NONG?</div>
+                            <div class="carousel-content">Yes you can! Levels using NONG's will not be added to the Main List(s), however they will still be eligible for the side list(s).</div>
+                            <div class="content-subheader">How many levels can I participate/build in?</div>
+                            <div class="carousel-content">As many as you'd like!</div>
+                            <div class="content-subheader">What happens if I don't finish my entry by the 24-hour mark?</div>
+                            <div class="carousel-content">Keep working on it! Even if it doesn't end up getting finished, you can continue the level later.</div>
+                            <div class="content-subheader">What happens if something goes wrong?</div>
+                            <div class="carousel-content">Contact RavingRafters, Slopes, herozer, or an Event Staff.</div>
+                            <div class="content-subheader">Does our level/description have to be/have something specific?</div>
+                            <div class="carousel-content">The description has to mention that it's a level for GD All Nighter, as well as the endscreen needing to have the GDAN logo (which you can find the ID for in the Rules and Assets page, but otherwise, you have free will)!</div>
+                            <div class="content-subheader">Does our level/description have to be/have something specific?</div>
+                            <div class="carousel-content">Not to worry! If your level doesn't make the main list(s) for most reasons, there will be extra lists that cover those entries as well, created and maintained by RavingRafters.</div>
+                            </div>
+                        <div class="carousel-item">
+                            <h2 class="carousel-header">Staff</h2>
+                            <div class="carousel-subheader">Hosts</div>
+                               <div class="stafflist-wrapper">
+
+                                    <div class="user-container">
+                                        <p class="user-label">herozer</p> <!--Change placeholder to staff name-->
+                                        <img class = "user-icon" src="./Assets/Staff Profile Pictures/herozer pfp hanny 1k.png"> <!--Change /placeholder.png to pfp image-->
+                                        <div class="user-socials-wrapper">
+                                            <img class="user-socials" src="./Assets/gd-icon.png" onclick="window.open('https:/\/www.gdbrowser.com/u/herozer'), _blank;"> <!--Change /u/placeholder to /u/[gdusername]-->
+                                            <img class="user-socials" src="./Assets/twitch-icon.png" onclick="window.open('https:\/\/www.twitch.tv\/herozer_'), _blank;"> <!--Change /placeholder to /[twitchusername]-->
+                                            <img class="user-socials" src="./Assets/twitter-icon.png" onclick="window.open('https:/\/www.x.com/herozerr');"> <!--Change /placeholder to /[twitterusername]-->
+                                            <img class="user-socials" src="./Assets/youtube-icon.png" onclick="window.open('https:/\/youtube.com/@herozer')"> <!--Change /@placeholder to /@[youtubeuser]-->
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="user-container">
+                                        <p class="user-label">Slopes</p>
+                                        <img class = "user-icon" src="./Assets/Staff Profile Pictures/slopes.jpg">
+                                        <div class="user-socials-wrapper">
+                                            <img class="user-socials" src="./Assets/gd-icon.png" onclick="window.open('https:/\/www.gdbrowser.com/u/Slopes'), _blank;">
+                                            <img class="user-socials" src="./Assets/youtube-icon.png" onclick="window.open('https:/\/youtube.com/@gdslopes')">
+                                        </div>
+                                    </div>
+
+                                    <div class="user-container">
+                                        <p class="user-label">RavingRafters</p> <!--Change placeholder to staff name-->
+                                        <img class = "user-icon" src="./Assets/Staff Profile Pictures/raving.png"> <!--Change /placeholder.png to pfp image-->
+                                        <div class="user-socials-wrapper">
+                                            <img class="user-socials" src="./Assets/gd-icon.png" onclick="window.open('https:/\/www.gdbrowser.com/u/RavingRafters'), _blank;"> <!--Change /u/placeholder to /u/[gdusername]-->
+                                            <img class="user-socials" src="./Assets/twitch-icon.png" onclick="window.open('https:\/\/www.twitch.tv\/ravingrafters'), _blank;"> <!--Change /placeholder to /[twitchusername]-->
+                                            <img class="user-socials" src="./Assets/twitter-icon.png" onclick="window.open('https:/\/www.x.com/RavingRafters');"> <!--Change /placeholder to /[twitterusername]-->
+                                            <img class="user-socials" src="./Assets/youtube-icon.png" onclick="window.open('https:/\/youtube.com/@ravingrafters')"> <!--Change /@placeholder to /@[youtubeuser]-->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            <div class="carousel-subheader">Judges</div>
+                            <div class="stafflist-wrapper">
+
+
+                                <!--User Info Start-->
+                                    <div class="user-container">
+                                        <p class="user-label">Infra</p> <!--Change placeholder to staff name-->
+                                        <img class = "user-icon" src="./Assets/Staff Profile Pictures/infra.png"> <!--Change /placeholder.png to pfp image-->
+                                        <div class="user-socials-wrapper">
+                                            <img class="user-socials" src="./Assets/gd-icon.png" onclick="window.open('https:/\/www.gdbrowser.com/u/Infra'), _blank;"> <!--Change /u/placeholder to /u/[gdusername]-->
+                                            <img class="user-socials" src="./Assets/twitch-icon.png" onclick="window.open('https:/\/www.twitch.tv/infra553'), _blank;"> <!--Change /placeholder to /[twitchusername]-->
+                                            <img class="user-socials" src="./Assets/twitter-icon.png" onclick="window.open('https:/\/www.x.com/infra553');"> <!--Change /placeholder to /[twitterusername]-->
+                                            <img class="user-socials" src="./Assets/youtube-icon.png" onclick="window.open('https:/\/youtube.com/@1nfra553')"> <!--Change /@placeholder to /@[youtubeuser]-->
+                                        </div>
+                                    </div>
+
+                                    <div class="user-container">
+                                        <p class="user-label">waffybun</p> <!--Change placeholder to staff name-->
+                                        <img class = "user-icon" src="./Assets/Staff Profile Pictures/waffl3x.png"> <!--Change /placeholder.png to pfp image-->
+                                        <div class="user-socials-wrapper">
+                                            <img class="user-socials" src="./Assets/gd-icon.png" onclick="window.open('https:/\/www.gdbrowser.com/u/waffybun'), _blank;"> <!--Change /u/placeholder to /u/[gdusername]-->
+                                            <img class="user-socials" src="./Assets/twitch-icon.png" onclick="window.open('https:\/\/www.twitch.tv\/waffybun'), _blank;"> <!--Change /placeholder to /[twitchusername]-->
+                                            <img class="user-socials" src="./Assets/youtube-icon.png" onclick="window.open('https:/\/youtube.com/@waffybun')"> <!--Change /@placeholder to /@[youtubeuser]-->
+                                        </div>
+                                    </div>
+
+                                <div class="user-container">
+                                        <p class="user-label">YraX</p> <!--Change placeholder to staff name-->
+                                        <img class = "user-icon" src="./Assets/Staff Profile Pictures/yrax.png"> <!--Change /placeholder.png to pfp image-->
+                                        <div class="user-socials-wrapper">
+                                            <img class="user-socials" src="./Assets/gd-icon.png" onclick="window.open('https:/\/www.gdbrowser.com/u/YraX'), _blank;"> <!--Change /u/placeholder to /u/[gdusername]-->
+                                            <img class="user-socials" src="./Assets/twitch-icon.png" onclick="window.open('https:\/\/www.twitch.tv\/yraxxxx'), _blank;"> <!--Change /placeholder to /[twitchusername]-->
+                                            <img class="user-socials" src="./Assets/twitter-icon.png" onclick="window.open('https:/\/www.x.com/YraXxxxx');"> <!--Change /placeholder to /[twitterusername]-->
+                                            <img class="user-socials" src="./Assets/youtube-icon.png" onclick="window.open('https:/\/youtube.com/@YraXxx')"> <!--Change /@placeholder to /@[youtubeuser]-->
+                                        </div>
+                                    </div>
+                                <!--User Info End-->
+
+                                </div>
+                            <div class="carousel-subheader">Other Staff</div>
+                            <div class="stafflist-wrapper">
+
+                                    <div class="user-container">
+                                        <p class="user-label">underscored</p>
+                                        <img class = "user-icon" src="./Assets/Staff Profile Pictures/underscored_v2.png">
+                                        <div class="user-socials-wrapper">
+                                            <img class="user-socials" src="./Assets/gd-icon.png" onclick="window.open('https:/\/www.gdbrowser.com/u/TechStudent10'), _blank;">
+                                            <img class="user-socials" src="./Assets/youtube-icon.png" onclick="window.open('https:/\/youtube.com/@TechStudent12')">
+                                        </div>
+                                    </div>
+   
+                                    <div class="user-container">
+                                        <p class="user-label">Prism</p>
+                                        <img class = "user-icon" src="./Assets/Staff Profile Pictures/prism.jpg">
+                                        <div class="user-socials-wrapper">
+                                            <img class="user-socials" src="./Assets/gd-icon.png" onclick="window.open('https:/\/www.gdbrowser.com/u/Prism'), _blank;">
+                                            <img class="user-socials" src="./Assets/twitter-icon.png" onclick="window.open('https:/\/www.x.com/PrismGMD');">
+                                            <img class="user-socials" src="./Assets/youtube-icon.png" onclick="window.open('https:/\/youtube.com/@GSPrism')">
+                                        </div>
+                                    </div>
+
+                                <div class="user-container">
+                                        <p class="user-label">Galacty</p>
+                                        <img class = "user-icon" src="./Assets/Staff Profile Pictures/0a51f5dc2d952986ec0d88e363040a7d.jpg">
+                                        <div class="user-socials-wrapper">
+                                            <img class="user-socials" src="./Assets/gd-icon.png" onclick="window.open('https:/\/www.gdbrowser.com/u/placeholder'), _blank;">
+                                            <img class="user-socials" src="./Assets/twitter-icon.png" onclick="window.open('https:/\/www.x.com/galactywannacry');">
+                                            <img class="user-socials" src="./Assets/youtube-icon.png" onclick="window.open('https:/\/youtube.com/@GalactyRe_')">
+                                        </div>
+                                    </div>
+
+                                <div class="user-container">
+                                        <p class="user-label">acezure</p>
+                                        <img class = "user-icon" src="./Assets/Staff Profile Pictures/acezure.png">
+                                        <div class="user-socials-wrapper">
+                                            <img class="user-socials" src="./Assets/gd-icon.png" onclick="window.open('https:/\/www.gdbrowser.com/u/acezure'), _blank;">
+                                            <img class="user-socials" src="./Assets/youtube-icon.png" onclick="window.open('https:/\/youtube.com/@acezure')">
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                        </div>
+                        <div class="carousel-item">
+                            <h2 class="carousel-header">Assets</h2>
+                            <div class="assets-grid">
+                                <div class="assets-grid-row">
+                                    <div class="assets-grid-col1">
+                                        <a>Live Timer</a>
+                                    </div>
+                                    <div class="assets-grid-col2">
+                                        <iframe  class="asset-preview" id="timer-preview" data-src="https://gdallnighter.com/timer" tabindex="-1"></iframe>
+                                    </div>
+                                    <div class="assets-grid-col3">
+                                        <a class="assets-button" onclick="navigator.clipboard.writeText('https:/\/gdallnighter.com/timer');">
+                                            <span class="material-symbols-outlined assets-button-icon">content_copy</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="assets-grid-row">
+                                    <div class="assets-grid-col1">
+                                        <a>Amount Donated</a>
+                                    </div>
+                                    <div class="assets-grid-col2">
+                                        <iframe  class="asset-preview" id="donated-preview" data-src="https://gdallnighter.com/raised" tabindex="-1"></iframe>
+                                    </div>
+                                    <div class="assets-grid-col3">
+                                        <a class="assets-button" onclick="navigator.clipboard.writeText('https:/\/gdallnighter.com/raised');">
+                                            <span class="material-symbols-outlined assets-button-icon">content_copy</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="assets-grid-row">
+                                    <div class="assets-grid-col1">
+                                        Logo
+                                    </div>
+                                    <div class="assets-grid-col2">
+                                        <img src="./Assets/Downloadable/logo.png" class="assets-preview" style="width:3vw; height:3.256vw;"></img>
+                                    </div>
+                                    <div class="assets-grid-col3">
+                                        <a class="assets-button" href="./Assets/Downloadable/logo.png" download>
+                                            <span class="material-symbols-outlined">download</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="assets-grid-row">
+                                    <div class="assets-grid-col1">
+                                        Banner
+                                    </div>
+                                    <div class="assets-grid-col2">
+                                        <img src="./Assets/Downloadable/banner.png" class="assets-preview" style="width:12vw; height:4w;"></img>
+                                    </div>
+                                    <div class="assets-grid-col3">
+                                        <a class="assets-button" href="./Assets/Downloadable/banner.png" download>
+                                            <span class="material-symbols-outlined">download</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="assets-grid-row">
+                                    <div class="assets-grid-col1">
+                                        Background
+                                    </div>
+                                    <div class="assets-grid-col2">
+                                        <video src="./Assets/Downloadable/Lunar Visual Loop 3k.mp4" class="assets-preview" style="border:1.5px solid white; border-radius:1px; width:7.0vw; height:3.8vw;"></video>
+                                    </div>
+                                    <div class="assets-grid-col3">
+                                        <a class="assets-button" href="./Assets/Downloadable/Lunar Visual Loop 3k.mp4">
+                                            <span class="material-symbols-outlined">download</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="assets-grid-row">
+                                    <div class="assets-grid-col1">
+                                        Charity Logo
+                                    </div>
+                                    <div class="assets-grid-col2">
+                                        <img src="./Assets/Downloadable/hftd2.png" class="assets-preview" style="width:5vw; height:5w;"></img>
+                                    </div>
+                                    <div class="assets-grid-col3">
+                                        <a class="assets-button" href="./Assets/Downloadable/hftd2.png">
+                                            <span class="material-symbols-outlined">download</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="assets-grid-row">
+                                    <div class="assets-grid-col1">
+                                        Level Logo(s)
+                                    </div>
+                                    <div class="assets-grid-col2">
+                                        128551914
+                                    </div>
+                                    <div class="assets-grid-col3">
+                                        <div class="assets-button">
+                                            <span class="material-symbols-outlined assets-button-icon" onclick="navigator.clipboard.writeText('128551914');">content_copy</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <h2 class="carousel-header">Previous Results</h2>
+                                <iframe class="results-video" data-src="https://www.youtube.com/embed/n2QrLQnkS6k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen tabindex="-1"></iframe>
+                                <iframe class="results-video" data-src="https://www.youtube.com/embed/rxGFRzvhvEM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen tabindex="-1"></iframe>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
