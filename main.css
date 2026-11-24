@@ -65,7 +65,7 @@ body {
     user-select: none;
 }
 .homepage-navbar-item {
-    width : 20vw;
+    width : 14vw;
     height : 6vh;
     margin : auto;
     display : flex;
@@ -101,6 +101,14 @@ body {
 #navbar-discord-button:hover {
     background : rgba(114,137,218, 0.6);
     background : linear-gradient(0deg,rgba(114,137,218, 0.55) 0%, rgba(114,137,218, 0.6) 100%);
+}
+#navbar-twitter-button:hover {
+    background : rgba(160, 172, 214, 0.6);
+    background : linear-gradient(0deg,rgba(160, 172, 214, 0.55) 0%, rgba(160, 172, 214, 0.6) 100%);
+}
+#navbar-youtube-button:hover {
+    background : rgba(218, 105, 130, 0.6);
+    background : linear-gradient(0deg,rgba(218, 105, 130, 0.55) 0%, rgba(218, 105, 130, 0.6) 100%);
 }
 .container-main-content {
     margin : 0;
